@@ -1,35 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>나를 소개합니다</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 600px;
-      margin: 80px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 10px;
-    }
-    p {
-      line-height: 1.6;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>안녕하세요 👋</h1>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="게임 개발자 포트폴리오 사이트 레이아웃"
+    />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div class="space-dust" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#intro" aria-label="처음으로 이동">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">Portfolio</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span class="sr-only">메뉴 열기</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="primary-navigation" class="site-nav" aria-label="주요 메뉴">
+        <a href="#intro">Intro</a>
+        <a href="#tools">Tools</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="intro" class="intro-section section">
+        <div class="intro-copy reveal">
+          <p class="eyebrow">Game Developer / Planner / Sound</p>
+          <h1>[이름]</h1>
+          <p class="slogan">[한 줄 슬로건을 입력하세요]</p>
+          <p id="content-status" class="content-status" role="status" hidden></p>
+        </div>
+
+        <div class="orbit-panel reveal" aria-label="포트폴리오 구성">
+          <div class="orbit-ring"></div>
+          <div class="orbit-core">
+            <span>DEV</span>
+          </div>
+          <div class="orbit-node node-a">Plan</div>
+          <div class="orbit-node node-b">Sound</div>
+          <div class="orbit-node node-c">Game</div>
+        </div>
+      </section>
+
+      <section id="tools" class="section content-band">
+        <div class="section-heading reveal">
+          <p class="eyebrow">What I Do</p>
+          <h2>내가 하는 것들</h2>
+        </div>
+
+        <div class="tool-grid">
+          <article class="tool-card reveal">
+            <span class="tool-index">01</span>
+            <h3>Game Development</h3>
+            <p>[사용 가능한 엔진 / 개발 분야]</p>
+          </article>
+          <article class="tool-card reveal">
+            <span class="tool-index">02</span>
+            <h3>Game Design</h3>
+            <p>[기획 역량 / 문서화 / 시스템 설계]</p>
+          </article>
+          <article class="tool-card reveal">
+            <span class="tool-index">03</span>
+            <h3>Sound</h3>
+            <p>[사운드 작업 / 오디오 툴]</p>
+          </article>
+          <article class="tool-card reveal">
+            <span class="tool-index">04</span>
+            <h3>Collaboration</h3>
+            <p>[협업 및 버전 관리 도구]</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section content-band">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Selected Works</p>
+          <h2>진행했던 프로젝트</h2>
+        </div>
+
+        <div class="project-layout">
+          <article class="project-card featured reveal">
+            <div>
+              <span class="project-type">Main Project</span>
+              <h3>[메인 프로젝트명]</h3>
+              <p>[프로젝트 설명 / 담당 역할 / 사용 기술]</p>
+            </div>
+            <a class="project-link" href="#" aria-label="메인 프로젝트 링크">
+              View
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <div>
+              <span class="project-type">Side Project</span>
+              <h3>[사이드 프로젝트명]</h3>
+              <p>[프로젝트 설명 / 담당 역할]</p>
+            </div>
+            <a class="project-link" href="#" aria-label="사이드 프로젝트 링크">
+              View
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <div>
+              <span class="project-type">Side Project</span>
+              <h3>[사이드 프로젝트명]</h3>
+              <p>[프로젝트 설명 / 담당 역할]</p>
+            </div>
+            <a class="project-link" href="#" aria-label="사이드 프로젝트 링크">
+              View
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>연락 수단</h2>
+        </div>
+
+        <div class="contact-grid">
+          <a class="contact-link reveal" href="mailto:">
+            <span>Email</span>
+            <strong>[email@example.com]</strong>
+          </a>
+          <a class="contact-link reveal" href="#">
+            <span>GitHub</span>
+            <strong>[GitHub URL]</strong>
+          </a>
+          <a class="contact-link reveal" href="#">
+            <span>Social</span>
+            <strong>[SNS / 기타 링크]</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> [이름]</p>
+      <a href="#intro">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="site-config.js"></script>
+    <script src="notion.js"></script>
+  </body>
 </html>
